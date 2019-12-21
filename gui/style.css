@@ -1,0 +1,48 @@
+body {
+  -webkit-user-select: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.left-side {
+  background-color: #fb7a24;
+}
+
+.my-background {
+  background-image: url("background.jpeg");
+}
+
+.test {
+  border: 2px solid red;
+}
+
+.my-sudo-input {
+  margin-bottom: 15px;
+}
+
+.my-sudo-input input {
+  border: 1px solid #2b2929;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.my-buttons-area {
+  background-color: #2b2929;
+}
+
+.my-buttons-area button {
+  color: white;
+}
+
+.my-buttons-area button:hover {
+  color: #fb7a24;
+}
+
+.my-button-default {
+  background-color: #2b2929;
+  color: white;
+}
+
+.my-button-default:hover {
+  color: #fb7a24;
+}
+/*# sourceMappingURL=style.css.map */

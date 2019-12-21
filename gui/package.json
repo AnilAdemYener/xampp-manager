@@ -1,0 +1,11 @@
+{
+  "name": "xampp-manager",
+  "main": "main.js",
+  "window": {
+    "title": "Xampp Manager for Linux",
+    "icon": "logo.png"
+  },
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  }
+}

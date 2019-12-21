@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Xampp Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+		<!-- vuejs -->
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+
+    <div id="app" class="container-fluid">
+      <div class="row h-100">
+ 
+        <!-- left side -->
+        <div class="col-md-4 left-side h-100 text-center">
+          <br>
+          <div class="row">
+            <div class="col-md-12"><img src="logo.png" alt="" width="100"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12 text-white"><h3>{{ title }}</h3></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12"><button class="btn my-button-default w-75" onclick="Git();">Git</button></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12"><button class="btn btn-success w-75 disabled" onclick="UpdateManager();">Update</button></div>
+          </div>
+          <br>
+        </div>
+
+        <!-- right side -->
+        <div class="col-md-8 h-100 justify-self-end">
+          <div class="row h-75 my-background">
+            <div class="col-md-12 align-self-end my-sudo-input">Sudo Password: <input id="input-sudo-password" type="password" v-model="sudoPassword"></div>
+          </div>
+          <div class="row h-25 my-buttons-area">
+            <div class="col-md"><button class="btn w-100 h-100" :disabled="!checkPassword(sudoPassword)" onclick="StartAllServices();">Start All Services</button></div>
+            <div class="col-md"><button class="btn w-100 h-100" :disabled="!checkPassword(sudoPassword)" onclick="StopAllServices();">Stop All Services</button></div>
+            <div class="col-md"><button class="btn w-100 h-100" onclick="OpenFolder();">Open Folder</button></div>
+            <div class="col-md"><button class="btn w-100 h-100" :disabled="!checkPassword(sudoPassword)" onclick="InstallXampp();">Install Xampp</button></div>
+            <div class="col-md"><button class="btn w-100 h-100" :disabled="!checkPassword(sudoPassword)" onclick="RemoveXampp();">Remove Xampp</button></div>
+					</div>
+        </div>
+
+      </div>
+    </div>
+    
+		<script src="vue.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  </body>
+</html>

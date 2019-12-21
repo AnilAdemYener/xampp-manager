@@ -1,0 +1,40 @@
+$orangeTheme: #fb7a24;
+$grayTheme: #2b2929;
+
+body {
+  -webkit-user-select: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.left-side {
+  background-color: $orangeTheme;
+}
+.my-background {
+  background-image: url("background.jpeg");
+}
+.test {
+  border: 2px solid red;
+}
+.my-sudo-input {
+  margin-bottom: 15px;
+}
+.my-sudo-input input {
+  border: 1px solid $grayTheme;
+  border-radius: 5px;
+  text-align: center;
+}
+.my-buttons-area {
+  background-color: $grayTheme;
+}
+.my-buttons-area button {
+  color: white;
+}
+.my-buttons-area button:hover {
+  color: $orangeTheme;
+}
+.my-button-default {
+  background-color: $grayTheme;
+  color: white;
+}
+.my-button-default:hover {
+  color: $orangeTheme;
+}
