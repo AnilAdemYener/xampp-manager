@@ -7,13 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace std;
+#include "create-nw-app/create-nw-app.h"
 
-#ifdef __linux__
-	#define OS 0
-#else
-	#define OS 1
-#endif
+using namespace std;
 
 int FileCheck(char FileName[25]){
 	if (access(FileName, F_OK) != -1){
@@ -25,16 +21,6 @@ int FileCheck(char FileName[25]){
 
 class xampp {
 	public:
-		void StartGui(){
-			if (FileCheck("nw/") == 1){
-				system("src/nwjs-installer.py");
-				system("nw/nw gui/. 2>/dev/null");
-			} else {
-				system("nw/nw gui/. 2>/dev/null");
-			}
-			return;
-		}
-
 		void SudoLogin(char password[25]){
 			char cmd[75] = "echo ";
 			strcat(cmd, password);
@@ -83,40 +69,57 @@ class xampp {
 		}
 };
 
+/*
+
+app stands for create-nw-app
+xampp_app stands for xampp class and functions!
+
+*/
+
 int main(int argc, char *argv[]){
-	if (OS == 0){
-		xampp app;
-		if (argc > 1){
-			for (int i=0; i<argc; i++){
-				if (strcmp(argv[i], "--sudo-login") == 0){
-					app.SudoLogin(argv[i+1]);	
-			
-					if (strcmp(argv[i+2], "--start-all-services") == 0){
-						app.StartAllServices();	
-					}
+  struct nw_app app;
+  strcpy(app.nw_path, "nw/nw");
+  strcpy(app.app_path, "gui/."); 
 
-					if (strcmp(argv[i+2], "--stop-all-services") == 0){
-						app.StopAllServices();
-					}
+  xampp xampp_app;
 
-					if (strcmp(argv[i+2], "--open-directory") == 0){
-						app.OpenDirectory();
-					}
+  if (nw_checkOs() == 1){
+    if (argc > 1){
+      if (strcmp(argv[1], "--debug") == 0){
+        nw_runGui("debug", app.nw_path, app.app_path);
+      }
 
-					if (strcmp(argv[i+2], "--install-xampp") == 0){
-						app.InstallXampp();
-					}
+      // sudo login and xampp funcs
+      if (strcmp(argv[1], "--sudo-login") == 0){
+        nw_sudoLogin(argv[2]);
+        if (argc > 2){
+          if (strcmp(argv[3], "--start-all-services") == 0){
+            xampp_app.StartAllServices();
+          }
 
-					if (strcmp(argv[i+2], "--remove-xampp") == 0){
-						app.RemoveXampp();
-					}
-				}
-			}
-		} else {
-			app.StartGui();
-		}
-	} else {
-		cout << "only for linux!" << endl;
-	}
-	return 0;
+          if (strcmp(argv[3], "--stop-all-services") == 0){
+            xampp_app.StopAllServices();
+          }
+
+          if (strcmp(argv[3], "--open-directory") == 0){
+            xampp_app.OpenDirectory();
+          }
+
+          if (strcmp(argv[3], "--install-xampp") == 0){
+            xampp_app.InstallXampp();
+          }
+
+          if (strcmp(argv[3], "--remove-xampp") == 0){
+            xampp_app.RemoveXampp();
+          }
+        }
+      }
+
+    } else {
+      nw_runGui("normal", app.nw_path, app.app_path);
+    }
+  } else {
+    nw_errorMessage("it's not linux!");
+  }
+  return 0;
 }

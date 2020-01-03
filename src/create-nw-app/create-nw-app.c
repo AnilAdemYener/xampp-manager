@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#ifdef __linux__
+  #define OS 1
+#else
+  #define OS 0
+#endif
+
+int nw_check(char file_name[50]){
+  if (access(file_name, F_OK) != -1){
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+void nw_runGui(char mode[15], char temp_nw_path[100], char temp_app_path[100]){
+  char cmd[350];
+  strcat(cmd, temp_nw_path);
+  strcat(cmd, " ");
+  strcat(cmd, temp_app_path);
+  if (strcmp(mode, "normal") == 0){
+    strcat(cmd, " 2>/dev/null");
+  }
+  system(cmd);
+  return;
+}
+
+int nw_checkOs(){
+  if (OS == 1){
+    return 1;
+  } else if (OS == 0){
+    return 0;
+  }
+}
+
+void nw_sudoLogin(char password[25]){
+  char cmd[75] = "echo ";
+  strcat(cmd, password);
+  strcat(cmd, " | sudo -S echo SUDO-LOGIN by CREATE-NW-APP");
+  system(cmd);
+  return;
+}
+
+void nw_errorMessage(char custom_msg[25]){
+  printf("UPS! There is a error!\n");
+  printf("custom error: %s\n", custom_msg);
+  return;
+}

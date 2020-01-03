@@ -3,8 +3,10 @@ import os, sys
 
 def main():
     if os.path.isdir("nw/") and os.path.isdir("src/") and os.path.exists("/usr/bin/g++"):
-        os.system("g++ src/main.cpp -o xampp-manager")
+        print("#### BUILDING !!")
+        os.system("g++ src/main.cpp src/create-nw-app/create-nw-app.c -o xampp-manager 2>/dev/null")
         os.system("./xampp-manager")
+        print("after it built you can run it from xampp-manager")
     else:
         if os.path.isdir("nw/") == False:
             os.system("src/nwjs-installer.py")
