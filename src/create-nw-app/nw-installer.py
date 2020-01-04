@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, sys, platform
 
-app_name = "nwjs-installer"
+app_name = "nw-installer"
 
 def printinfo(nw_version, arch):
 		print("\n               { "+app_name+" }")

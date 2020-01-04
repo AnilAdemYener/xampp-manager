@@ -9,7 +9,7 @@ def main():
         print("after it built you can run it from xampp-manager")
     else:
         if os.path.isdir("nw/") == False:
-            os.system("src/nwjs-installer.py")
+            os.system("src/create-nw-app/nw-installer.py")
             os.system("./xampp-manager")
         else:
             print("try downloading again")

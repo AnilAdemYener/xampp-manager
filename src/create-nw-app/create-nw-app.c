@@ -9,7 +9,7 @@
   #define OS 0
 #endif
 
-int nw_check(char file_name[50]){
+int nw_checkFile(char file_name[50]){
   if (access(file_name, F_OK) != -1){
     return 1;
   } else {
@@ -49,4 +49,14 @@ void nw_errorMessage(char custom_msg[25]){
   printf("UPS! There is a error!\n");
   printf("custom error: %s\n", custom_msg);
   return;
+}
+
+void nw_checkNw(char temp_nwjsinstaller_path[100]){
+  if (nw_checkFile("nw/") == 1){
+    return;
+  } else {
+    char cmd[125] = "./";
+    strcat(cmd, temp_nwjsinstaller_path);
+    system(cmd);
+  }
 }

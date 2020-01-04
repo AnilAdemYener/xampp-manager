@@ -80,6 +80,7 @@ int main(int argc, char *argv[]){
   struct nw_app app;
   strcpy(app.nw_path, "nw/nw");
   strcpy(app.app_path, "gui/."); 
+	strcpy(app.installer_path, "src/create-nw-app/nw-installer.py");
 
   xampp xampp_app;
 
@@ -116,7 +117,8 @@ int main(int argc, char *argv[]){
       }
 
     } else {
-      nw_runGui("normal", app.nw_path, app.app_path);
+			nw_checkNw(app.installer_path);
+			nw_runGui("normal", app.nw_path, app.app_path);
     }
   } else {
     nw_errorMessage("it's not linux!");
