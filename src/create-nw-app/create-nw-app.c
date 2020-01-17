@@ -37,7 +37,7 @@ void nw_runGui(char mode[15], char temp_nw_path[100], char temp_app_path[100]){
   }
   system(cmd);*/
 
-	char cmd[350];
+	char cmd[450];
 	if (strcmp(mode, "normal") == 0){
 		strcat(cmd, temp_nw_path);
 		strcat(cmd, " ");
@@ -50,8 +50,8 @@ void nw_runGui(char mode[15], char temp_nw_path[100], char temp_app_path[100]){
 	} else {
 		strcpy(cmd, "error");
 	}
-	//system(cmd);
-	print_screen(cmd);
+	system(cmd);
+	//print_screen(cmd);
   return;
 }
 

@@ -5,9 +5,11 @@
 <h3>Screenshots</h3>
 <img src="screenshots/0.png">
 <img src="screenshots/1.png">
+<img src="screenshots/2.png">
 
 <h3>Installing</h3>
 <ul>
 	<li>git clone https://github.com/anilademyener/xampp-manager</li>
-	<li>./build.py</li>
+	<li>make</li>
+	<li>./xampp-manager</li>
 </ul>
