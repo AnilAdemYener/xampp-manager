@@ -9,6 +9,16 @@
   #define OS 0
 #endif
 
+void print_screen(char msg[250]){
+	system("clear");
+	printf("\t\t\n");
+	printf("\t-----------------------------------------\n");
+	printf("\t                 %s                      \n", msg);
+	printf("\t-----------------------------------------\n");
+	printf("\t\t\n");
+	return;
+}
+
 int nw_checkFile(char file_name[50]){
   if (access(file_name, F_OK) != -1){
     return 1;
@@ -18,14 +28,30 @@ int nw_checkFile(char file_name[50]){
 }
 
 void nw_runGui(char mode[15], char temp_nw_path[100], char temp_app_path[100]){
-  char cmd[350];
+  /*char cmd[350];
   strcat(cmd, temp_nw_path);
   strcat(cmd, " ");
   strcat(cmd, temp_app_path);
   if (strcmp(mode, "normal") == 0){
     strcat(cmd, " 2>/dev/null");
   }
-  system(cmd);
+  system(cmd);*/
+
+	char cmd[350];
+	if (strcmp(mode, "normal") == 0){
+		strcat(cmd, temp_nw_path);
+		strcat(cmd, " ");
+		strcat(cmd, temp_app_path);
+		strcat(cmd, " 2>/dev/null");
+	} else if (strcmp(mode, "debug") == 0){
+		strcat(cmd, temp_nw_path);
+		strcat(cmd, " ");
+		strcat(cmd, temp_app_path);
+	} else {
+		strcpy(cmd, "error");
+	}
+	//system(cmd);
+	print_screen(cmd);
   return;
 }
 
