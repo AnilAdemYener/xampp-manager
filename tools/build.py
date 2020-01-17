@@ -32,6 +32,7 @@ if sys.platform == "linux" or sys.platform == "linux2":
         else:
             if os.path.isfile("src/create-nw-app/nw-installer.py") == True:
                 os.system("src/create-nw-app/nw-installer.py")
+                app.build()
             else:
                 app.error("couldn't find nw-installer.py\ninstall again")
     else:

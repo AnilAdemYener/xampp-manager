@@ -32,7 +32,7 @@ function xampp(option){
 }
 
 function Git(){
-  sh.exec("xdg-open https://gitlab.com/anilademyener/xampp-manager.git");
+  sh.exec("xdg-open https://github.com/anilademyener/xampp-manager");
   return;
 }
 
