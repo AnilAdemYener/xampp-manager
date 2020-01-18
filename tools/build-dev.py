@@ -1,4 +1,26 @@
 #!/usr/bin/env python3
+
+'''
+
+// xampp manager - for linux systems
+
+this build script is only for developers
+of this project. if you know what you're
+doing or want to keep source files after
+compiling, you can use this script
+
+- anilademyener@github.com
+- anilademyener@gmail.com
+
+
+differences between build.py
+============================
+this script won't remove source
+files such as main.cpp or create-
+nw-app.c/.h
+
+'''
+
 import os
 import sys
 
@@ -21,15 +43,6 @@ class App:
         os.system(build_command)
         os.system("clear")
         print("you can execute this app with ./xampp-manager command")
-        remove_list = [
-            "screenshots/",
-            "src/",
-            "tools/",
-            "Makefile",
-            "README.md"
-        ]
-        for item in remove_list:
-            os.system("rm -rf " + item)        
         return
 
 
