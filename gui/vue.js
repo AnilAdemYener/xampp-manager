@@ -1,10 +1,20 @@
+const fs = require('fs');
+
 var app = new Vue({
 	el: '#app',
 	data: {
 		title: 'Xampp Manager',
-		sudoPassword: ''
+		sudoPassword: '',
+    installed_status: false,
+    running_status: false
 	},
 	methods: {
+    getUnits: function(){
+      if (fs.existsSync("/opt/lampp/xampp")){
+        this.installed_status = true;
+      }
+      // check for if it's runnin'
+    },
 		checkPassword(input){
 			return true;
 		}
@@ -15,5 +25,8 @@ var app = new Vue({
 				return true;
 			}
 		}*/
-	}
+	},
+  created: function(){
+    this.getUnits();
+  }
 });
