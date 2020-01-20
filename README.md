@@ -1,15 +1,15 @@
-<img src="gui/logo.png" height="75">
-<h3>Xampp Manager</h3>
-<h4>it only works for linux. at least for now</h4>
+xampp manager devel
+===================
 
-<h3>Screenshots</h3>
-<img src="screenshots/0.png">
-<img src="screenshots/1.png">
-<img src="screenshots/2.png">
+// this is a dev. edition!
+not recommended for daily
+using.
 
-<h3>Installing</h3>
-<ul>
-	<li>git clone https://github.com/anilademyener/xampp-manager</li>
-	<li>make</li>
-	<li>./xampp-manager</li>
-</ul>
+=> ./build.py
+=> ./install.py
+
+''
+$ sudo xampp-manager-devel
+''
+
+=> ./uninstall.py

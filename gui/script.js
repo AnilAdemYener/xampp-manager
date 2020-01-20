@@ -1,6 +1,7 @@
 var sh = require("shelljs");
 
-var RootDirectory = "../";
+//var RootDirectory = "./functions/";
+var RootDirectory = "/usr/local/bin/xampp-manager/funs/";
 
 // error messages
 function error(errorMessage){
