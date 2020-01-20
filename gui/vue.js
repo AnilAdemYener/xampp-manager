@@ -6,11 +6,14 @@ var app = new Vue({
 	},
 	methods: {
 		checkPassword(input){
+			return true;
+		}
+		/*checkPassword(input){
 			if (input == "" || input == " " || input == null){
 				return false;
 			} else {
 				return true;
 			}
-		}
+		}*/
 	}
 });
