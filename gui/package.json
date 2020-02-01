@@ -2,7 +2,7 @@
   "name": "xampp-manager",
   "main": "main.js",
   "window": {
-    "title": "Xampp Manager for Linux",
+    "title": "Xampp Manager",
     "icon": "logo.png"
   },
   "dependencies": {

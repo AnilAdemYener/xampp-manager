@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Exec=/usr/local/bin/xampp-manager/nw/nw /usr/local/bin/xampp-manager/nwjs/
-Name=Xampp Manager for Linux
-Icon=/usr/local/bin/xampp-manager/nwjs/logo.png

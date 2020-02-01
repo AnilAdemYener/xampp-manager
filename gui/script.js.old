@@ -1,7 +1,7 @@
 var sh = require("shelljs");
 
 var RootDirectory = "../";
-var BaseAppDir = RootDirectory + "xampp-manager";
+var BaseAppDir = RootDirectory + "base";
 
 // error messages
 function error(errorMessage){
@@ -20,9 +20,9 @@ function xampp(option){
     error("nullSudo");
   } else {
     if (option == "start"){
-			sh.exec(BaseAppDir + " --sudo-login " + sudoPassword + " --xampp-exec start");
+    	sh.exec(BaseAppDir + " --sudo-login " + sudoPassword + " --start-all-services");
 		} else if (option == "stop"){
-    	sh.exec(BaseAppDir + " --sudo-login " + sudoPassword + " --xampp-exec stop");
+    	sh.exec(BaseAppDir + " --sudo-login " + sudoPassword + " --stop-all-services");
 		} else if (option == "install"){
 			sh.exec(BaseAppDir + " --sudo-login " + sudoPassword + " --install-xampp");
 		} else if (option == "remove"){

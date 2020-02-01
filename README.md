@@ -7,9 +7,12 @@
 <img src="screenshots/1.png">
 <img src="screenshots/2.png">
 
-<h3>Installing</h3>
+<h3>Installing (for GNU+Linux)</h3>
 <ul>
-	<li>git clone https://github.com/anilademyener/xampp-manager</li>
-	<li>make</li>
-	<li>./xampp-manager</li>
+<li>git clone https://github.com/anilademyener/xampp-manager</li>
+<li>./build-linux.py</li>
+<li>./xampp-manager</li>
 </ul>
+
+<h2>Windows is not supported!</h2>
+<h3>still with nw.exe you can run gui</h3>

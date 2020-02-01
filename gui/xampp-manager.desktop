@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/usr/local/bin/xampp-manager
+Name=Xampp Manager
+Comment=Xampp Manager for GNU+Linux
+Icon=/usr/local/bin/xampp-manager_files/gui/logo.png

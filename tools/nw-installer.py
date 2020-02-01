@@ -38,3 +38,4 @@ if sys.platform == "linux": # main
 			os.system("sudo rm -rf /usr/local/bin/"+app_name+".py")
 	else:
 		install("null")
+
