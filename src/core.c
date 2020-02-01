@@ -56,7 +56,15 @@ int main(int argc, char *argv[]){
 				g_help();
 			}
 		} else {
-			l_start_nw("normal");
+			//l_start_nw("normal");
+			/*
+
+			normal (installed) vers. just not
+			working. i don't know why.
+			it sucks tho
+
+			*/
+			l_start_nw("local");
 		}
 	}
 	
