@@ -75,7 +75,8 @@ such as 'normal', 'debug' 'local'
 */
 	if (strcmp(opt, "local") == 0){
 		if (l_file_check("nw/nw") == 0){
-			system("nw/nw gui/. 2>/dev/null");	
+		  //system("nw/nw gui/. 2>/dev/null");
+		  system("nohup nw/nw gui/. & 2>/dev/null");
 		} else {
 			// nw installer	
 		}
